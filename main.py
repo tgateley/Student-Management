@@ -1,6 +1,6 @@
 from PyQt6.QtWidgets import QApplication, QVBoxLayout, QLabel, QWidget, QGridLayout, \
     QLineEdit, QPushButton, QMainWindow, QTableWidget, QTableWidgetItem, QDialog, \
-    QComboBox, QToolBar, QStatusBar
+    QComboBox, QToolBar, QStatusBar, QMessageBox
 from PyQt6.QtGui import QAction, QIcon
 from PyQt6.QtCore import Qt
 import sys
@@ -90,7 +90,42 @@ class MainWindow(QMainWindow):
 
 
 class DeleteDialog(QDialog):
-    pass
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Delete Student Data")
+
+        layout = QGridLayout()
+
+        conformation = QLabel("Are you sure you want to delete?")
+        yes = QPushButton("Yes")
+        no = QPushButton("No")
+
+        layout.addWidget(conformation, 0, 0, 1, 2)
+        layout.addWidget(yes, 1, 0)
+        layout.addWidget(no, 1, 1)
+        self.setLayout(layout)
+
+        yes.clicked.connect(self.delete_student)
+
+
+    def delete_student(self):
+        index = main_window.table.currentRow()
+        student_id = main_window.table.item(index, 0).text()
+
+        connection = sqlite3.connect("database.db")
+        cursor = connection.cursor()
+        cursor.execute("DELETE from students WHERE id = ?", (student_id,))
+        connection.commit()
+        cursor.close()
+        connection.close()
+        main_window.load_data()
+
+        self.close()
+
+        confirmation_box = QMessageBox()
+        confirmation_box.setWindowTitle("Success")
+        confirmation_box.setText("The record was deleted successfully!")
+        confirmation_box.exec()
 
 
 class EditDialog(QDialog):
@@ -104,8 +139,10 @@ class EditDialog(QDialog):
         # Gaet student name from selected row
         index = main_window.table.currentRow()
         student_name = main_window.table.item(index, 1).text()
+
         # Get id from selected row
-        self.student_id = main_window.table.item(index,0).text()
+        self.student_id = main_window.table.item(index, 0).text()
+
         # Add Student Name widget
         self.student_name = QLineEdit(student_name)
         self.student_name.setPlaceholderText("Name")
