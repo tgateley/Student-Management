@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2a65450-875e-4105-a7ee-338691a81900" name="Changes" comment="Add min size to main window. Add Toolbar and Toolbar Icons">
+    <list default="true" id="d2a65450-875e-4105-a7ee-338691a81900" name="Changes" comment="Add status bar and status bar elements">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -40,7 +41,8 @@
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Tiffany/PycharmProjects/student_management_system&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Tiffany/PycharmProjects/student_management_system&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -175,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726282293329</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add status bar and status bar elements">
+      <option name="closed" value="true" />
+      <created>1726284898885</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1726284898885</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -186,6 +196,7 @@
     <MESSAGE value="Add search student window" />
     <MESSAGE value="Implement Search Student" />
     <MESSAGE value="Add min size to main window. Add Toolbar and Toolbar Icons" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add min size to main window. Add Toolbar and Toolbar Icons" />
+    <MESSAGE value="Add status bar and status bar elements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add status bar and status bar elements" />
   </component>
 </project>

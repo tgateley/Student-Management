@@ -96,7 +96,53 @@ class DeleteDialog(QDialog):
 class EditDialog(QDialog):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Edit Student Information")
+        self.setWindowTitle("Edit Student Data")
+        self.setFixedWidth(300)
+        self.setFixedHeight(300)
+
+        layout = QVBoxLayout()
+        # Gaet student name from selected row
+        index = main_window.table.currentRow()
+        student_name = main_window.table.item(index, 1).text()
+        # Get id from selected row
+        self.student_id = main_window.table.item(index,0).text()
+        # Add Student Name widget
+        self.student_name = QLineEdit(student_name)
+        self.student_name.setPlaceholderText("Name")
+        layout.addWidget(self.student_name)
+
+        # Add Course combo box
+        student_course = main_window.table.item(index, 2).text()
+        self.course_name = QComboBox()
+        courses = ["Biology", "Math", "Astronomy", "Physics"]
+        self.course_name.addItems(courses)
+        self.course_name.setCurrentText(student_course)
+        layout.addWidget(self.course_name)
+
+        # Add Mobile Phone widget
+        student_mobile = main_window.table.item(index, 3).text()
+        self.mobile_number = QLineEdit(student_mobile)
+        self.mobile_number.setPlaceholderText("Phone number")
+        layout.addWidget(self.mobile_number)
+
+        # Add a submit button
+        button = QPushButton("Submit Changes")
+        button.clicked.connect(self.update_student)
+        layout.addWidget(button)
+
+        self.setLayout(layout)
+
+    def update_student(self):
+        connection = sqlite3.connect("database.db")
+        cursor = connection.cursor()
+        cursor.execute("UPDATE students SET name = ?, course = ?, mobile = ? WHERE id = ?",
+                       (self.student_name.text(),
+                        self.course_name.itemText(self.course_name.currentIndex()),
+                        self.mobile_number.text(), self.student_id))
+        connection.commit()
+        cursor.close()
+        connection.close()
+        main_window.load_data()
 
 
 class InsertDialog(QDialog):
@@ -125,7 +171,7 @@ class InsertDialog(QDialog):
         layout.addWidget(self.mobile_number)
 
         # Add a submit button
-        button = QPushButton("Submit")
+        button = QPushButton("Register Student")
         button.clicked.connect(self.add_student)
         layout.addWidget(button)
 
