@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2a65450-875e-4105-a7ee-338691a81900" name="Changes" comment="Implement Search Student">
-      <change afterPath="$PROJECT_DIR$/icons/add.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/search.png" afterDir="false" />
+    <list default="true" id="d2a65450-875e-4105-a7ee-338691a81900" name="Changes" comment="Add min size to main window. Add Toolbar and Toolbar Icons">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -169,7 +167,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726239975865</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add min size to main window. Add Toolbar and Toolbar Icons">
+      <option name="closed" value="true" />
+      <created>1726282293329</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1726282293329</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -179,6 +185,7 @@
     <MESSAGE value="Add an add student window" />
     <MESSAGE value="Add search student window" />
     <MESSAGE value="Implement Search Student" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement Search Student" />
+    <MESSAGE value="Add min size to main window. Add Toolbar and Toolbar Icons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add min size to main window. Add Toolbar and Toolbar Icons" />
   </component>
 </project>
